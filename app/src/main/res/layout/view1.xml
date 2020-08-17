@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--vertical垂直,horizontal水平-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    wrap_content内容多宽,控件就有多宽-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button1"
+        android:background="#FFF00000"/>
+<!--    match_parent,父容器有多宽,控件多宽-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button2"
+        android:background="#0FFF00"/>
+
+
+</LinearLayout>
