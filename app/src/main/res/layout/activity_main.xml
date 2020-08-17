@@ -6,16 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    id后面必须是@+id/,这是android的规则-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="96px"
+        android:text="登录"
+        android:textSize="96sp"
         android:textColor="#FFFF0000"
+        android:id="@+id/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="PxUsage" />
+        tools:ignore="HardcodedText,PxUsage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
