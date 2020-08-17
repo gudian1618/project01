@@ -9,6 +9,11 @@
         android:layout_height="wrap_content"
         android:text="8折"
         android:textSize="64px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="callJs"
+        android:id="@+id/btn"/>
 
 <!--    相当于浏览器-->
     <WebView

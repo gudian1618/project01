@@ -3,7 +3,6 @@ package com.github.gudian1618.project01;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
      * 有异常处理,即使有异常,程序还能正常进行别的操作,不会中断退出崩溃
      * @param savedInstanceState
      */
+
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +29,21 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.view1);
         // 找到webview,加载服务器上的响应页面
         setContentView(R.layout.webview);
-        WebView webView = (WebView) findViewById(R.id.webview);
-        webView.clearCache(true);
+        webView = (WebView) findViewById(R.id.webview);
+//        webView.clearCache(true);
 //        webView.loadUrl("http://localhost:8096/CGB_DB_SYS_V3_01_war/doIndexUI.do");
         webView.loadUrl("https://www.jd.com");
         // 设置允许执行js
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+
+        // 通过app内调用js代码
+//        Button button = (Button) findViewById(R.id.btn);
+//        ButtonListener listener = new ButtonListener();
+//        button.setOnClickListener(listener);
+
         // 单击超连接跳出app
-        webView.setWebViewClient(new WebViewClient());
+//        webView.setWebViewClient(new WebViewClient());
 
 //        // 找到textView
 //        // 跟js中的document.getElementById()一样
@@ -74,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
 //            } catch (Exception e) {
 //                e.printStackTrace();
 //            }
+//        }
+//    }
+
+//    class ButtonListener implements View.OnClickListener {
+//
+//        @Override
+//        public void onClick(View view) {
+//            // 执行网页中的js
+//            webView.loadUrl("javaScript:setUsername");
 //        }
 //    }
 
