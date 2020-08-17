@@ -1,9 +1,9 @@
 package com.github.gudian1618.project01;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +25,18 @@ public class MainActivity extends AppCompatActivity {
          * 程序变小了,访问速度也提高了
          */
 //        setContentView(R.layout.activity_main);
-        setContentView(R.layout.view1);
+//        setContentView(R.layout.view1);
+        // 找到webview,加载服务器上的响应页面
+        setContentView(R.layout.webview);
+        WebView webView = (WebView) findViewById(R.id.webview);
+        webView.clearCache(true);
+//        webView.loadUrl("http://localhost:8096/CGB_DB_SYS_V3_01_war/doIndexUI.do");
+        webView.loadUrl("https://www.jd.com");
+        // 设置允许执行js
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        // 单击超连接跳出app
+        webView.setWebViewClient(new WebViewClient());
 
 //        // 找到textView
 //        // 跟js中的document.getElementById()一样
@@ -34,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 //        TextViewListener listener = new TextViewListener();
 //        textView.setOnClickListener(listener);
 
-        Button btn = (Button) findViewById(R.id.btn1);
-        BtnListener listener = new BtnListener();
-        btn.setOnClickListener(listener);
+//        Button btn = (Button) findViewById(R.id.btn1);
+//        BtnListener listener = new BtnListener();
+//        btn.setOnClickListener(listener);
 
     }
 
@@ -52,18 +63,18 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //    }
 
-    class BtnListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View view) {
-            try {
-                Toast toast = Toast.makeText(MainActivity.this, "你好", Toast.LENGTH_LONG);
-//                toast = null;
-                toast.show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    class BtnListener implements View.OnClickListener {
+//
+//        @Override
+//        public void onClick(View view) {
+//            try {
+//                Toast toast = Toast.makeText(MainActivity.this, "你好", Toast.LENGTH_LONG);
+////                toast = null;
+//                toast.show();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
 }
