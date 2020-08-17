@@ -6,6 +6,7 @@
 
 <!--    wrap_content内容多宽,控件就有多宽-->
     <Button
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="button1"

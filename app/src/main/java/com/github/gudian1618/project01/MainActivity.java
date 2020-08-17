@@ -1,10 +1,19 @@
 package com.github.gudian1618.project01;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * 系统调用的方法onCreate,conCLick,必须加try-catch代码,否则出现异常,进程就结束了,程序退出.
+     * 有异常处理,即使有异常,程序还能正常进行别的操作,不会中断退出崩溃
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
          * 程序变小了,访问速度也提高了
          */
 //        setContentView(R.layout.activity_main);
-        setContentView(R.layout.view2);
+        setContentView(R.layout.view1);
+
 //        // 找到textView
 //        // 跟js中的document.getElementById()一样
 //        TextView textView = (TextView) findViewById(R.id.login);
@@ -24,9 +34,13 @@ public class MainActivity extends AppCompatActivity {
 //        TextViewListener listener = new TextViewListener();
 //        textView.setOnClickListener(listener);
 
+        Button btn = (Button) findViewById(R.id.btn1);
+        BtnListener listener = new BtnListener();
+        btn.setOnClickListener(listener);
+
     }
 
-//    // 内部类
+//    // 练习点击按钮内部类
 //    class TextViewListener implements View.OnClickListener {
 //
 //        @Override
@@ -37,5 +51,19 @@ public class MainActivity extends AppCompatActivity {
 //            toast.show();
 //        }
 //    }
+
+    class BtnListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            try {
+                Toast toast = Toast.makeText(MainActivity.this, "你好", Toast.LENGTH_LONG);
+//                toast = null;
+                toast.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
